@@ -16,13 +16,21 @@ board.addEventListener('click',  event => {
 
         if(user === 0 ) {
             // get the cell value and update xScore
+            xScore += getValue(cellName);
+            console.log(xScore)
             event.target.classList.add("add-x");
+            // check for winning condition 
+            checkForWin(xScore,user);
             // check if all cells are filled
             user = 1;
             
         } else {
+            // get the cell value and update zeroScore
+            zeroScore += getValue(cellName);
+            console.log(zeroScore)
+
             event.target.classList.add("add-zero");
-                        // check if all cells are filled
+            // check if all cells are filled
 
             user = 0;
         }
@@ -38,12 +46,28 @@ function getValue(cellName) {
   
     switch(cellName) {
         case  'one':
-              return 1;
+              return '00';
         case 'two':
-            return 2;
+            return '01';
         case 'three':
-            return 3;
+            return '02';
+        case 'four':
+            return '10';
+        case 'five':
+            return '11';
+        case 'six':
+            return '12';
+        case 'seven':
+            return '20';
+        case 'eight':
+            return '21';
+        case 'nine':
+            return '22';
 
     }
 }
-function checkForWin () {}
+function checkForWin (score, player) {
+
+        
+        if(score )
+}
