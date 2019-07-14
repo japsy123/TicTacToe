@@ -4,29 +4,31 @@ background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-2
 background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.modal {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  display: flex;
-  display: none;
-}
-.modal-content {
-  width: 450px;
-  height: 250px;
-  background-color: white;
-  border-radius: 5px;
+
+.block {
+  display: block;
   text-align: center;
-  padding: 15px;
+}
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  display: none;
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.modal-content input {
-  margin: 10px auto;
-  display: block;
-  width: 50%;
-  height: 15px;
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
 }
 .container {
  height: 100%;
