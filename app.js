@@ -6,7 +6,7 @@ var playerTwo;
 var xMoves = 0;
 var zeroMoves = 0;
 var cellOne, cellTwo;
-var winner, currentMove;
+var winner, currentMove, currentTarget;
 
 var board = document.querySelector(".board");
 var form = document.getElementById("myForm");
@@ -29,9 +29,16 @@ var cells = {
 };
 
 
-function undoLastMove (cellName) {
+function undoLastMove () {
 
-    cells[cellName] = `${cellName}`
+    cells[currentMove] = `${currentMove}`
+    currentTarget.classList.remove('add-x','add-zero')
+
+    if(user === 'X' ) {
+        user = '0';
+    } else {
+        user = 'X';
+    }
 }
 
 
@@ -46,6 +53,7 @@ board.addEventListener("click", event => {
       currentMove = cellName;
       xMoves++;
       console.log(cells);
+      currentTarget = event.target;
       event.target.classList.add("add-x");
       // check for winning condition
 
@@ -66,6 +74,7 @@ board.addEventListener("click", event => {
       zeroMoves++;
       cells[cellName] = "0";
       currentMove = cellName;
+      currentTarget = event.target;
 
       event.target.classList.add("add-zero");
 
@@ -158,3 +167,6 @@ function endGame(player) {
   document.getElementById("myModal2").appendChild(node);
   document.getElementById("modal2").style.display = "block";
 }
+
+
+document.querySelector('.undo').addEventListener('click',undoLastMove);
