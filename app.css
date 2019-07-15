@@ -12,7 +12,6 @@ background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, F
 .modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  display: none;
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
