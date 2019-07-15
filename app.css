@@ -78,3 +78,11 @@ table button {
   background-size: contain;
   background-color: white;
 }
+
+
+ .undo {
+  float: left;
+  cursor: pointer;
+  font-size: 1.6rem;
+
+}
